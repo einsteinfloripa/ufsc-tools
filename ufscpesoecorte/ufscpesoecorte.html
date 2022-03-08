@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://einsteinfloripa.com.br/sistema-interno/favicon.ico"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="src/style.css" rel="stylesheet" />
+    <title>Pesos e cortes UFSC | EinsteinFloripa</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="card ef-green">
+          <div class="card-content">
+            <span class="card-title">Sua pontuação:</span>
+            <div class="row" id="myScore">
+              <div id="my-pl" class="col s6 l4">
+                <div class="card">
+                  <span>Primeira Língua</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-sl" class="col s6 l4">
+                <div class="card">
+                  <span>Segunda Língua</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-mt" class="col s6 l4">
+                <div class="card">
+                  <span>Matemática</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-bi" class="col s6 l4">
+                <div class="card">
+                  <span>Biologia</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-qm" class="col s6 l4">
+                <div class="card">
+                  <span>Química</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-fc" class="col s6 l4">
+                <div class="card">
+                  <span>Física</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-ch" class="col s6 l4">
+                <div class="card">
+                  <span>Ciências Humanas</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-re" class="col s6 l4">
+                <div class="card">
+                  <span>Redação</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="my-qd" class="col s6 l4">
+                <div class="card">
+                  <span>Questão Discursivas</span>
+                  <div class="input-field">
+                    <input min="0" step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card ef-blue">
+          <div class="card-content">
+            <span class="card-title">Peso e Corte do curso:</span>
+            <br />
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  type="text"
+                  id="autocomplete-input"
+                  class="autocomplete"
+                />
+                <label for="autocomplete-input">Curso</label>
+              </div>
+            </div>
+            <div class="row" id="courseConfig">
+              <div id="discp-pl" class="col s6 l4">
+                <div class="card">
+                  <span>Primeira Língua</span>
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-sl" class="col s6 l4">
+                <div class="card">
+                  <span>Segunda Língua</span>
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-mt" class="col s6 l4">
+                <div class="card">
+                  <span>Matemática</span>
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-bi" class="col s6 l4">
+                <div class="card">
+                  <span>Biologia</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-qm" class="col s6 l4">
+                <div class="card">
+                  <span>Química</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-fc" class="col s6 l4">
+                <div class="card">
+                  <span>Física</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-ch" class="col s6 l4">
+                <div class="card">
+                  <span>Ciências Humanas</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-re" class="col s6 l4">
+                <div class="card">
+                  <span>Redação</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="discp-qd" class="col s6 l4">
+                <div class="card">
+                  <span>Questão Discursivas</span>
+
+                  <div class="row">
+                    <div class="col s6">
+                      Peso
+                      <div class="input-field">
+                        <input min="0" class="peso" type="number" />
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      Corte
+                      <div class="input-field">
+                        <input min="0" step=".5" class="corte" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="pmc" class="col s12 l4 offset-l4">
+                <div class="card">
+                  <span>Pontuação Máxima do Curso</span>
+
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="input-field">
+                        <input min="0" step=".01" type="number" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>* Biologia + Matemática ≥ 2,0</p>
+            <p>** Física + Química ≥ 2,0</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Resultados:</span>
+            <br />
+            <div class="row" id="finalScore">
+              <div id="total-pl" class="col s6 l4">
+                <div class="card">
+                  <span>Primeira Língua</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-sl" class="col s6 l4">
+                <div class="card">
+                  <span>Segunda Língua</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-mt" class="col s6 l4">
+                <div class="card">
+                  <span>Matemática</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-bi" class="col s6 l4">
+                <div class="card">
+                  <span>Biologia</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-qm" class="col s6 l4">
+                <div class="card">
+                  <span>Química</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-fc" class="col s6 l4">
+                <div class="card">
+                  <span>Física</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-ch" class="col s6 l4">
+                <div class="card">
+                  <span>Ciências Humanas</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-re" class="col s6 l4">
+                <div class="card">
+                  <span>Redação</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total-qd" class="col s6 l4">
+                <div class="card">
+                  <span>Questão Discursivas</span>
+                  <div class="input-field">
+                    <input disabled step=".01" type="number" />
+                  </div>
+                </div>
+              </div>
+              <div id="total" id="total" class="col s12">
+                <div class="card">
+                  <span>Pontuação total</span>
+                  <div class="input-field">
+                    <input disabled />
+                  </div>
+                </div>
+              </div>
+              <div id="final" id="total" class="col s12">
+                <div class="card">
+                  <span>Nota Final*</span>
+                  <div class="input-field">
+                    <input disabled />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a id="calculate" class="waves-effect waves-light black btn fluid"
+              >Calcular</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+      <div class="All">
+        <div class="Sum">NF =</div>
+        <span class="Fraction"
+          ><span class="Numerator">100 * PT</span
+          ><span class="Denominator">PMC</span></span
+        >
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col s12 m12 l6" style="text-align: center">
+          <strong>PT</strong> – Pontuação Total (PT). Somatória dos pontos
+          obtidos nas questões de proposições múltiplas e/ou abertas, na redação
+          e nas questões discursivas<br />
+        </div>
+
+        <div class="col s12 m12 l6" style="text-align: center">
+          <strong>PMC</strong> – Pontuação Máxima do Curso escolhido<br />
+          <strong>NF</strong> – Nota Final<br />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12" style="text-align: center">
+          *Para o curso de Artes Cênicas desconsidere esse valor e realize o
+          cálculo utilizando sua nota obtida no Teste de verificação de
+          Habilidade Específica de acordo com a fórmula disponível no edital do
+          vestibular
+        </div>
+      </div>
+
+      <br />
+      <p class="einstein" style="text-align: center">
+        © 2021 Einstein Floripa Pré-Vestibulares <br />
+        Feito com ❤️ pelo Vale do Silício
+      </p>
+      <p class="link-ufsc">
+        <a href="ufscnota.html"
+          >→ Saiba como realizar o cálculo de somatória das questões</a
+        >
+      </p>
+    </div>
+
+    <a
+      href="https://einsteinfloripa.com.br/"
+      class="btn-floating tooltipped einstein-home"
+      data-position="left"
+      data-tooltip="Saiba mais sobre o Einstein!"
+      ><img src="Logo-Einstein-branco.png"
+    /></a>
+
+    <div class="fixed-group-btn">
+      <ul>
+        <li>
+          <a
+            onclick="document.location.reload(true);"
+            class="btn-floating tooltipped"
+            data-position="left"
+            data-tooltip="Recarregar"
+            ><i class="material-icons">autorenew</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="btn-floating modal-trigger tooltipped"
+            data-position="left"
+            data-tooltip="Ajuda"
+            href="#info"
+            ><i class="material-icons">help</i></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div id="info" class="modal">
+      <div class="modal-content">
+        <h4>Pesos e Cortes Vestibular UFSC/UFFS</h4>
+        <p>
+          O conteúdo dessa página tem por objetivo simular o cálculo da nota
+          final do Vestibular UFSC/UFFS seguindo as diretrizes estabelecidas nos
+          editais da Comissão Permanente do Vestibular (Coperve).
+        </p>
+        <p>
+          Saiba mais conferindo o edital do vestibular da instituição:
+          <a href="https://coperve.ufsc.br/" target="_blank">Clique aqui</a>
+        </p>
+
+        <blockquote>
+          7. DA CLASSIFICAÇÃO
+          <br /><br />
+          [...]
+          <br /><br />
+          7.2. A Pontuação Total (PT) do candidato será o somatório dos pontos
+          obtidos nas questões de proposições múltiplas e/ou abertas, na redação
+          e nas questões discursivas, levando-se em conta os pesos das
+          disciplinas conforme estabelecido no Anexo III deste Edital.
+          <br /><br />
+          7.2.1. A Nota Final de cada candidato no Concurso Vestibular UFSC/2018
+          (NF), exceto para os candidatos ao curso de Artes Cênicas, será
+          calculada pela fórmula abaixo e será expressa na base centesimal com
+          duas casas decimais após a vírgula, com arredondamento na segunda casa
+          decimal.
+          <br />
+          NF = 100 * PT / PMC
+          <br /><br />
+          7.2.1.1. PMC é a Pontuação Máxima do Curso possível de ser obtida
+          aplicando-se os pesos estabelecidos no Anexo III deste Edital.
+          <br /><br />
+          7.2.2. A nota final dos candidatos ao curso de Artes Cênicas será
+          calculada pela fórmula abaixo e será expressa com duas casas decimais
+          após a vírgula, com arredondamento na segunda casa decimal.
+          <br />
+          NF = ((100 * PT / 105) + NotaTHE) / 2
+          <br /><br />
+          (Trecho do EDITAL Nº 014/2019)
+        </blockquote>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Ok</a
+        >
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="src/papaparse.min.js"></script>
+  <script src="src/script.js"></script>
+</html>

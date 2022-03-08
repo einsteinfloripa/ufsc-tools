@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://einsteinfloripa.com.br/sistema-interno/favicon.ico"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="src/style.css" rel="stylesheet" />
+    <title>Calculadora de Somatória | EinsteinFloripa</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div style="background-color: #d5ffd5" class="card">
+            <div class="card-content">
+              <span class="card-title">Resposta</span>
+              <p>Selecione abaixo as proposições que você considera corretas</p>
+              <p id="numOpt" style="float: right; color: #9a9a9a">
+                (7 Proposições)
+              </p>
+            </div>
+            <div class="card-action interruptores">
+              <div class="row">
+                <div id="parent-option1" class="switch col s3">
+                  01
+                  <label>
+                    <input
+                      id="option1"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option2" class="switch col s3">
+                  02
+                  <label>
+                    <input
+                      id="option2"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option3" class="switch col s3">
+                  04
+                  <label>
+                    <input
+                      id="option3"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option4" class="switch col s3">
+                  08
+                  <label>
+                    <input
+                      id="option4"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option5" class="switch col s4">
+                  16
+                  <label>
+                    <input
+                      id="option5"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option6" class="switch col s4">
+                  32
+                  <label>
+                    <input
+                      id="option6"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option7" class="switch col s4">
+                  64
+                  <label>
+                    <input
+                      id="option7"
+                      type="checkbox"
+                      onchange="calculateAnswer()"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-action">
+              <div class="calculo">
+                <label>Calcúlo</label>
+                <div class="input-field">
+                  <input id="showcaseInput" disabled />
+                </div>
+              </div>
+
+              <div class="resposta">
+                <label>Sua resposta</label>
+                <div class="input-field">
+                  <input onchange="checkResult()" id="result" type="number" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l6">
+          <div style="background-color: #c2dcff" class="card">
+            <div class="card-content">
+              <span class="card-title">Gabarito</span>
+              <p>
+                Selecione abaixo as proposições corretas de acordo com o
+                gabarito
+              </p>
+              <p id="numOpt_g" style="float: right; color: #9a9a9a">
+                (7 Proposições)
+              </p>
+            </div>
+            <div class="card-action interruptores">
+              <div class="row">
+                <div id="parent-option1_g" class="switch col s3">
+                  01
+                  <label>
+                    <input
+                      id="option1_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option2_g" class="switch col s3">
+                  02
+                  <label>
+                    <input
+                      id="option2_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option3_g" class="switch col s3">
+                  04
+                  <label>
+                    <input
+                      id="option3_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option4_g" class="switch col s3">
+                  08
+                  <label>
+                    <input
+                      id="option4_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option5_g" class="switch col s4">
+                  16
+                  <label>
+                    <input
+                      id="option5_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option6_g" class="switch col s4">
+                  32
+                  <label>
+                    <input
+                      id="option6_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+                <div id="parent-option7_g" class="switch col s4">
+                  64
+                  <label>
+                    <input
+                      id="option7_g"
+                      type="checkbox"
+                      onchange="calculateAnswer(true)"
+                    />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-action">
+              <div class="calculo">
+                <label>Calcúlo</label>
+                <div class="input-field">
+                  <input id="showcaseInput_g" disabled />
+                </div>
+              </div>
+
+              <div class="resposta">
+                <label>Resposta correta</label>
+                <div class="input-field">
+                  <input
+                    onchange="checkResult(true)"
+                    id="result_g"
+                    type="number"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--<a onclick="calculateScore()" class="waves-effect waves-light btn fluid"
+        >Calcular pontuação</a
+      >-->
+
+      <div class="card">
+        <div class="card-content">
+          <p id="score-label">
+            Pontuação do candidato na questão:
+            <strong id="score">0,00</strong>
+          </p>
+        </div>
+      </div>
+
+      <p style="text-align: center">
+        As questões de proposições múltiplas serão pontuadas de acordo com a
+        seguinte regra: <br />Se <strong>NPC > NPI</strong> Então:
+      </p>
+      <div class="All">
+        <div class="Sum">P =</div>
+        <span class="Fraction"
+          ><span class="Numerator">NP − (NTPC − (NPC − NPI)</span
+          ><span class="Denominator">NP</span></span
+        >
+      </div>
+
+      <p style="text-align: center">Senão:</p>
+      <strong class="All">P = 0,00</strong>
+      <hr />
+
+      <div class="row">
+        <div class="col s12 m12 l6" style="text-align: center">
+          <strong>P</strong> – Pontuação do candidato na questão<br />
+          <strong>NP</strong> – Número de proposições da questão<br />
+          <strong>NTPC</strong> – Número total de proposições corretas na
+          questão
+        </div>
+
+        <div class="col s12 m12 l6" style="text-align: center">
+          <strong>NPC</strong> – Número de proposições corretas consideradas
+          corretas pelo candidato <br /><strong>NPI</strong> – Número de
+          proposições<br />
+          incorretas consideradas corretas pelo candidato
+        </div>
+      </div>
+
+      <br />
+      <p class="einstein" style="text-align: center">
+        © 2021 Einstein Floripa Pré-Vestibulares <br />
+        Feito com ❤️ pelo Vale do Silício
+      </p>
+      <p class="link-ufsc">
+        <a href="ufscpesoecorte.html">→ Saiba como calcular sua nota final</a>
+      </p>
+    </div>
+
+    <a
+      href="https://einsteinfloripa.com.br/"
+      class="btn-floating tooltipped einstein-home"
+      data-position="left"
+      data-tooltip="Saiba mais sobre o Einstein!"
+      ><img src="Logo-Einstein-branco.png"
+    /></a>
+
+    <div class="fixed-group-btn">
+      <ul>
+        <li>
+          <a
+            class="btn-floating modal-trigger tooltipped"
+            data-position="left"
+            data-tooltip="Editar"
+            href="#config"
+            ><i class="material-icons">create</i></a
+          >
+        </li>
+        <li>
+          <a
+            onclick="document.location.reload(true);"
+            class="btn-floating tooltipped"
+            data-position="left"
+            data-tooltip="Recarregar"
+            ><i class="material-icons">autorenew</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="btn-floating modal-trigger tooltipped"
+            data-position="left"
+            data-tooltip="Ajuda"
+            href="#info"
+            ><i class="material-icons">help</i></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div id="info" class="modal">
+      <div class="modal-content">
+        <h4>Calculadora de Somatória Vestibular UFSC/UFFS</h4>
+        <p>
+          O conteúdo dessa página tem por objetivo simular o cálculo da
+          pontuação de questões de Proposições Múltiplas do Vestibular UFSC/UFFS
+          seguindo as diretrizes estabelecidas nos editais da Comissão
+          Permanente do Vestibular (Coperve).
+        </p>
+        <p>
+          Saiba mais conferindo o edital do vestibular da instituição:
+          <a href="https://coperve.ufsc.br/" target="_blank">Clique aqui</a>
+        </p>
+
+        <blockquote>
+          6. DA PONTUAÇÃO DAS QUESTÕES
+          <br /><br />
+          6.1. As questões de proposições múltiplas serão pontuadas de acordo
+          com a seguinte regra:
+          <br /><br />
+          Se NPC > NPI Então P = (NP − (NTPC − (NPC − NPI)) / NP Senão P = 0,00
+          <br />
+          Onde:
+          <br /><br />
+          P – Pontuação do candidato na questão<br />
+          NP – Número de proposições da questão<br />
+          NTPC – Número total de proposições corretas na questão<br />
+          NPC – Número de proposições corretas consideradas corretas pelo
+          candidato<br />
+          NPI – Número de proposições incorretas consideradas corretas pelo
+          candidato
+          <br /><br />
+          6.1.1. A pontuação de cada questão será expressa com duas casas
+          decimais após a vírgula, com arredondamento na segunda casa decimal.
+          <br /><br />
+          [...]
+          <br /><br />
+          (Trecho do EDITAL Nº 014/2019)
+        </blockquote>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Ok</a
+        >
+      </div>
+    </div>
+
+    <div id="config" class="modal bottom-sheet">
+      <div class="modal-content">
+        <div class="row">
+          <div class="input-field col s8 m8 l3 offset-l2 offset-m2 offset-s2">
+            <select id="numOptionsValue">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option selected value="7">7</option>
+            </select>
+            <label>Número de proposições</label>
+          </div>
+          <div class="switch col s4 m4 l2">
+            <label>
+              Exibir Interruptores
+              <input id="interruptores-switch" type="checkbox" checked />
+              <span class="lever"></span>
+            </label>
+          </div>
+          <div class="switch col s4 m4 l2">
+            <label>
+              Exibir Cálculo
+              <input id="calculo-switch" type="checkbox" checked />
+              <span class="lever"></span>
+            </label>
+          </div>
+          <div class="switch col s4 m4 l2">
+            <label>
+              Exibir Resposta
+              <input id="resposta-switch" type="checkbox" checked />
+              <span class="lever"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a onclick="config()" class="waves-effect waves-light modal-close btn"
+          >Aplicar</a
+        >
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="src/script.js"></script>
+</html>

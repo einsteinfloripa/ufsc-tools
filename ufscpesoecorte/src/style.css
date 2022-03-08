@@ -1,0 +1,222 @@
+
+      .switch,
+      .switch * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        transition: filter 0.5s, opacity 1s;
+      }
+
+      #showcaseInput,
+      #result,
+      #showcaseInput_g,
+      #result_g,
+      label,
+      #score,
+      #score-label {
+        text-align: center;
+      }
+
+      body {
+        background-color: #ddd;
+        overflow-x: hidden;
+      }
+
+      .modal.bottom-sheet {
+        overflow-y: initial;
+      }
+      .modal {
+        max-height: 95%;
+      }
+
+      .fluid {
+        width: 100%;
+      }
+
+      .fixed-group-btn {
+        top: 90px;
+        right: 12px;
+        z-index: 997;
+        position: fixed;
+      }
+
+      .fixed-group-btn ul li {
+        margin-bottom: 15px;
+      }
+
+      .einstein-home {
+        width: 130px;
+        height: 130px;
+        padding: 10px;
+        position: fixed;
+        top: -40px;
+        right: -40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .einstein-home img {
+        width: 62%;
+        margin: 10px;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #989898;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: white;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(231, 231, 231);
+      }
+
+      .blur-option {
+        filter: blur(50px);
+
+        opacity: 0;
+      }
+
+      .All {
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+      }
+      .Sum {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .Fraction {
+        display: table-cell;
+        text-align: center;
+      }
+      .Denominator {
+        border-top: 1px solid #000;
+        display: block;
+      }
+      .Fraction,
+      .Numerator,
+      .Denominator {
+        padding: 0px 5px;
+      }
+
+      blockquote {
+        border-left: 5px solid #6e92ee;
+      }
+
+      .hide {
+        display: none;
+      }
+      .btn-floating {
+        background-color: #5487c2;
+      }
+      .btn-floating:hover {
+        background-color: #3d638f;
+      }
+
+      .btn:focus,
+      .btn-large:focus,
+      .btn-small:focus,
+      .btn-floating:focus {
+        background-color: #314e6e;
+      }
+
+      .switch label input[type="checkbox"]:checked + .lever {
+        background-color: #3da957;
+      }
+      .switch label input[type="checkbox"]:checked + .lever:after {
+        background-color: #00cc0c;
+      }
+
+      /*-----------------------------*/
+
+      .card {
+        transition: background-color ease 0.4s;
+      }
+      #myScore .col .card,
+      #courseConfig .col .card,
+      #finalScore .col .card {
+        padding: 8px 18px;
+        text-align: center;
+      }
+      input:not(.autocomplete),
+      .input-field {
+        text-align: center;
+        margin: 0 !important;
+      }
+      .card > span {
+        font-weight: bold;
+      }
+
+      .ef-green {
+        background-color: #d5ffd5;
+      }
+      .ef-green .card {
+        background-color: #c6ffc6;
+      }
+      .ef-blue {
+        background-color: #c2dcff;
+      }
+      .ef-blue .card {
+        background-color: #b1d2ff;
+      }
+
+      .abaixo-corte > .card > span:after {
+        content: " 🛑";
+      }
+      .abaixo-corte > .card {
+        background-color: #ff00003d;
+      }
+      .acima-corte > .card > span:after {
+        content: " ✅";
+      }
+      .acima-corte > .card {
+        background-color: #00ff003d;
+      }
+
+      .link-ufsc a {
+        color: unset;
+      }
+      .link-ufsc a:hover {
+        text-decoration: underline;
+      }
+
+      .link-ufsc {
+        text-align: center;
+        position: absolute;
+        right: 0;
+        width: 25%;
+        background-color: #5487c2;
+        color: white;
+        padding: 16px;
+        border-radius: 20px 0 0 0;
+      }
+
+      .einstein {
+        width: 69%;
+        text-align: left;
+        position: absolute;
+      }
+      @media only screen and (min-width: 601px) {
+        .einstein {
+          width: 85%;
+          text-align: center;
+        }
+      }
+      @media only screen and (min-width: 993px) {
+        .einstein {
+          width: 70%;
+        }
+      }
